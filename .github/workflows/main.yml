@@ -57,7 +57,7 @@ jobs:
 #         run: docker images 
 
       - name: Build & Push to GitHub Package
-        uses: opspresso/action-docker@main
+        uses: opspresso/action-docker@master
         with:
           args: --docker
         env:
