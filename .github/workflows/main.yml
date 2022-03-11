@@ -52,6 +52,6 @@ jobs:
       - name: build the docker image
         run: docker build . --file Dockerfile --tag sample-docker
       - name: publish the docker image
-        run: docker push ghcr.io/shiva1418/sample-docker-temp:latest
+        run: docker push ghcr.io/shiva1418/sample-docker:latest
       - name: list docker images
         run: docker images 
