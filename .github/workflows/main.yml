@@ -50,6 +50,7 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
       - name: build the docker image
-        run: docker build . --file Dockerfile --tag sample-docker
+      - run: docker build . --file Dockerfile --tag sample-docker
+      - run: docker push ghcr.io/shiva1418/sample-docker-temp:latest
       - name: list docker images
         run: docker images 
