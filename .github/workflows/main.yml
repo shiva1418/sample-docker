@@ -31,10 +31,10 @@ jobs:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.DOCKERACCESSTOKEN }}
-      - name: build the docker image
-        run: docker build . --file Dockerfile --tag sample-docker
-      - name: list docker images
-        run: docker images 
+#       - name: build the docker image
+#         run: docker build . --file Dockerfile --tag sample-docker
+#       - name: list docker images
+#         run: docker images 
 
       - name: Extract metadata (tags, labels) for Docker
         id: meta
@@ -49,3 +49,7 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+      - name: build the docker image
+        run: docker build . --file Dockerfile --tag sample-docker
+      - name: list docker images
+        run: docker images 
