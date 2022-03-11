@@ -50,9 +50,9 @@ jobs:
 #           tags: ${{ steps.meta.outputs.tags }}
 #           labels: ${{ steps.meta.outputs.labels }}
 #       - name: build the docker image
-#         run: docker build . --file Dockerfile --tag sample-docker
+#         run: docker build . --file Dockerfile --tag sample_docker
 #       - name: publish the docker image
-#         run: docker push ghcr.io/shiva1418/sample-docker
+#         run: docker push ghcr.io/shiva1418/sample_docker
 #       - name: list docker images
 #         run: docker images 
       - name: Build & Push to GitHub Package
