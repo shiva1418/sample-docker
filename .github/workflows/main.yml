@@ -20,10 +20,10 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      - name: build the docker image
-        run: docker build . --file Dockerfile --tag my-image
-      - name: list docker images
-        run: docker images 
+#       - name: build the docker image
+#         run: docker build . --file Dockerfile --tag my-image
+#       - name: list docker images
+#         run: docker images 
 
       - name: Log in to the Container registry
         uses: docker/login-action@v1.14.1
@@ -31,6 +31,10 @@ jobs:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.DOCKERACCESSTOKEN }}
+      - name: build the docker image
+        run: docker build . --file Dockerfile --tag sample-docker
+      - name: list docker images
+        run: docker images 
 
       - name: Extract metadata (tags, labels) for Docker
         id: meta
